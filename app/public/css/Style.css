@@ -1,0 +1,32 @@
+
+	h1 {background-color: black;
+		font-family:sans-serif;
+			color: white;
+
+			}
+	header {background-color: lightgray;
+		border: 10 solid lightgray;
+		padding: 10;
+		font-family:sans-serif
+		margin:5px;
+	}
+	a {color:dimgray;
+		font-weight: bold;
+		text-decoration: none;
+		margin-left:7px;
+		margin-bottom:0px;}
+	body {	font-family:sans-serif
+	}
+	a:hover {color: firebrick;}
+
+	h2 {background-color: red;
+		padding: 8px;
+		border-radius:8px;
+		color: white;}
+	.q1 {font-style: italic;}
+	footer {background-color: black;
+			font-family:sans-serif;
+			color: white;
+			padding:7px;
+			margin-top:15px;
+			}
