@@ -80,7 +80,7 @@
 	<p></p>
 
 	<h2> General Certifications </h2>
-
+        <div id="patientRecordsApp">
             <table class="table table-hover table-condensed table-bordered">
         <thead>
             <tr>
@@ -90,8 +90,25 @@
                 <th>Standard Expiry (Years)</th>
             </tr>
         </thead>
-
+//turn tom's table code into table code for certifications
+//replace p with c, and Patients with Certifications
         <tbody>
+          <tr v-for="c in Certifications" @click="handleRowClick(c)">
+              <td>{{ c.certID }}</td>
+              <td>{{ c.agency }}</td>
+              <td>{{ c.certname }}</td>
+              <td>{{ c.expires }}</td>
+              <td>
+                  <form action="/editmember.html" >
+                     <button type="submit" class="editbtn">Edit</button>
+                  </form>
+                   <form action="/deletemember.php" >
+                     <button type="submit" class="deletebtn">Delete</button>
+                  </form>
+              </td>
+          </tr>
+
+<!--
             <tr>
                 <td>101</td>
                 <td>American Heart Association</td>
@@ -138,7 +155,7 @@
                     </form>
                 </td>
 
-            </tr>
+            </tr> -->
         </tbody>
 
 <!--
@@ -150,13 +167,13 @@
         </tfoot>
 -->
     </table>
-
+</div>
         <form action="/editmember.html" >
                        <button type="submit" class="addcertificationbtn">Add Certification</button>
                     </form>
         </main>
         	</body>
-
+  <script src="js/Certifications.app.js"></script>
 
 
 	<footer>
