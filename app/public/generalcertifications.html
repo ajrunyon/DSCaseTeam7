@@ -78,9 +78,11 @@
 	<p></p>
 
 	<p></p>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/Certifications.js"></script>
 
 	<h2> General Certifications </h2>
-        <div id="patientRecordsApp">
+        <div id="generalcertificationsapp">
             <table class="table table-hover table-condensed table-bordered">
         <thead>
             <tr>
@@ -90,8 +92,8 @@
                 <th>Standard Expiry (Years)</th>
             </tr>
         </thead>
-//turn tom's table code into table code for certifications
-//replace p with c, and Patients with Certifications
+<!--turn tom's table code into table code for certifications
+//replace p with c, and Patients with Certifications -->
         <tbody>
           <tr v-for="c in Certifications" @click="handleRowClick(c)">
               <td>{{ c.certID }}</td>
@@ -173,8 +175,6 @@
                     </form>
         </main>
         	</body>
-  <script src="js/Certifications.app.js"></script>
-
 
 	<footer>
 	<p> Fire Dept. | Phone: 800-555-1234 | 222 Rasputin Drive, Watkinsville, GA 52003 </p>

@@ -1,21 +1,21 @@
 var generalcertifications = new Vue({
-  el: '#generalcertificationsApp',
+  el: '#generalcertificationsapp',
   data: {
     Certifications: [],
-    recordCertifications: {},
+//    recordCertifications: {},
   },
   methods: {
-    fetchPatients() {
-  fetch('public/dummy.php')
+    fetchCertifications() {
+  fetch('../public/dummy.php')
   .then(response => response.json())
-  .then(json => { generalcertificationsApp.Certifications = json })
+  .then(json => { generalcertificationsapp.Certifications = json })
 },
-    handleRowClick(patient) {
-  generalcertificationsApp.patient = patient;
-}
+//    handleRowClick(certifications) {
+//  generalcertificationsApp.Certifications = certifications;
+//}
   },
   created() {
-  this.handleReset();
+//  this.handleReset();
   this.fetchCertifications();
 }
 });
