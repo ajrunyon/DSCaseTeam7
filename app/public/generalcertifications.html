@@ -99,10 +99,7 @@
               <td>{{ c.certname }}</td>
               <td>{{ c.expires }}</td>
               <td>
-                  <form action="/editmember.html" >
-                     <button type="submit" class="editbtn">Edit</button>
-                  </form>
-                   <form action="/deletemember.php" >
+                   <form action="/deletecertification.js" >
                      <button type="submit" class="deletebtn">Delete</button>
                   </form>
               </td>
@@ -168,9 +165,42 @@
 -->
     </table>
 </div>
-        <form action="/editmember.html" >
-                       <button type="submit" class="addcertificationbtn">Add Certification</button>
-                    </form>
+<form @submit.prevent="handleSubmit">
+  <div class="form-group row">
+    <label for="inputFirstName" class="col-sm-2 col-form-label">Certification ID</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputCertID" placeholder="Certification ID" v-model="recordPatient.firstName">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputLastName" class="col-sm-2 col-form-label">Agency</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputAgency" placeholder="Agency" v-model="recordPatient.lastName">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputName" placeholder="Certification Name" v-model="recordPatient.sexAtBirth">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputDob" class="col-sm-2 col-form-label">Standard Expiry</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" v-model="recordPatient.dob">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Create Patient Record</button>
+    </div>
+  </div>
+</form>
+
         </main>
         	</body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
