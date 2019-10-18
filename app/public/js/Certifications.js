@@ -1,4 +1,4 @@
-var generalcertifications = new Vue({
+var generalcertificationsapp = new Vue({
   el: '#generalcertificationsapp',
   data: {
     Certifications: [],
@@ -6,7 +6,7 @@ var generalcertifications = new Vue({
   },
   methods: {
     fetchCertifications() {
-  fetch('../public/dummy.php')
+  fetch('dummy.php')
   .then(response => response.json())
   .then(json => { generalcertificationsapp.Certifications = json })
 },
