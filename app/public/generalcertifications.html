@@ -164,47 +164,47 @@
         </tfoot>
 -->
     </table>
-</div>
+
 <form @submit.prevent="handleSubmit">
   <div class="form-group row">
     <label for="inputFirstName" class="col-sm-2 col-form-label">Certification ID</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputCertID" placeholder="Certification ID" v-model="recordPatient.firstName">
+      <input type="text" class="form-control" id="inputCertID" placeholder="Certification ID" v-model="recordCertifications.certID">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="inputLastName" class="col-sm-2 col-form-label">Agency</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputAgency" placeholder="Agency" v-model="recordPatient.lastName">
+      <input type="text" class="form-control" id="inputAgency" placeholder="Agency" v-model="recordCertifications.agency">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="inputSexAtBirth" class="col-sm-2 col-form-label">Name</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="inputName" placeholder="Certification Name" v-model="recordPatient.sexAtBirth">
+      <input type="text" class="form-control" id="inputName" placeholder="Certification Name" v-model="recordCertifications.certname">
     </div>
   </div>
 
   <div class="form-group row">
     <label for="inputDob" class="col-sm-2 col-form-label">Standard Expiry</label>
     <div class="col-sm-10">
-      <input type="date" class="form-control" id="inputDob" placeholder="2001-12-13" v-model="recordPatient.dob">
+      <input type="date" class="form-control" id="inputExpires" placeholder="2001-12-13" v-model="recordCertifications.expires">
     </div>
   </div>
 
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary">Create Patient Record</button>
+      <button type="submit" class="btn btn-primary">Add New Certification</button>
     </div>
   </div>
 </form>
-
+</div>
         </main>
         	</body>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="js/Certifications.js"></script>
+<script src="js/GeneralCertifications.js"></script>
 	<footer>
 	<p> Fire Dept. | Phone: 800-555-1234 | 222 Rasputin Drive, Watkinsville, GA 52003 </p>
 	</footer>
