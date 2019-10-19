@@ -13,7 +13,7 @@ $stmt = $db->prepare(
 
 $stmt->execute([
   $guid,
-  $_POST['certID'],
+//  $_POST['certID'],
   $_POST['agency'],
   $_POST['certname'],
   $_POST['expires'],
@@ -22,5 +22,5 @@ $stmt->execute([
 // Step 4: Output
 header('HTTP/1.1 303 See Other');
 
-// Might need to change file structure here...
-header('Location:.../member records/?guid='.$guid);
+// Might need to change file structure here...?guid='.$guid
+header('Location: ../certificationrecords/?guid='.$guid);

@@ -18,17 +18,17 @@ handleSubmit(event) {
   // .then( ... )
   fetch('api/certificationrecords/post.php', {
     method:'POST',
-    body: JSON.stringify(this.Certifications),
+    body: JSON.stringify(this.recordCertifications),
     headers: {
       "Content-Type": "application/json; charset=utf-8"
     }
   })
   .then( response => response.json() )
 .then( json => { waitingApp.Certifications = json})
-.catch( err => {
-  console.error('WORK GENCERT ERROR:');
-  console.error(err);
-})
+//.catch( err => {
+  //console.error('WORK GENCERT ERROR:');
+  //console.error(err);
+//})
   //this.Certifications.push( this.recordCertifications );
   this.handleReset();
 },
@@ -47,7 +47,7 @@ handleReset() {
 //}
   },
   created() {
-//  this.handleReset();
+  this.handleReset();
   this.fetchCertifications();
 }
 });
