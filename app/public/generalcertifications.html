@@ -100,7 +100,7 @@
               <td>{{ c.expires }}</td>
               <td>
                    <form action="/deletecertification.js" >
-                     <button type="submit" class="deletebtn">Delete</button>
+     <input type='button' value='Delete' @click='deleteRecord(index,c.certID)'></input>
                   </form>
               </td>
           </tr>

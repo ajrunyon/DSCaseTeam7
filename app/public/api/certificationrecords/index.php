@@ -15,11 +15,11 @@ if (isset($_GET['guid'])) {
   $stmt->execute();
 }
 
-//haven't created $members yet
-$members = $stmt->fetchAll();
+//haven't created $members yet ??
+$certifications = $stmt->fetchAll();
 
 //Step 3: Convert to Json
-$json = json_encode($members, JSON_PRETTY_PRINT);
+$json = json_encode($certifications, JSON_PRETTY_PRINT);
 
 // Step 4: Output
 header('Content-Type: appliction/json');
