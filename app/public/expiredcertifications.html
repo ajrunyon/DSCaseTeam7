@@ -75,23 +75,26 @@
 </header>
 	<body>
 	<main>
-	<h2>Expired Certifications</h2>
-  <table class="table table-hover table-condensed table-bordered">
-<thead>
-  <tr>
-      <th>Member</th>
-      <th> Expired Certifications</th>
-  </tr>
-</thead>
 
-<tbody>
-  <tr >
-      <td>Member 1</td>
-      <td>Certifications</td>
-  </tr>
-</tbody>
-
-</table>
+    <h2>Member Report</h2>
+      <div id="expiredcertificationsapp">
+        <table class="table table-hover table-condensed table-bordered">
+          <thead>
+            <tr>
+                <th>Member</th>
+                <th>Expired Certifications</th>
+                <th>Expiration Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="e in expired" @click="handleRowClick(m)">
+                <td>{{ e.memberID }}</td>
+                <td>{{ e.certID }}</td>
+                <td>{{ e.expirationDate }}</td>
+            </tr>
+    </tbody>
+    </table>
+    </div>
 
 </main>
  	<hr>

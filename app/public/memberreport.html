@@ -76,22 +76,22 @@
 	<body>
     <main>
   	<h2>Member Report</h2>
-    <table class="table table-hover table-condensed table-bordered">
-  <thead>
-    <tr>
-        <th>Member</th>
-        <th>Certifications</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr >
-        <td>Member 1</td>
-        <td>Certifications</td>
-    </tr>
+      <div id="MemberReportapp">
+        <table class="table table-hover table-condensed table-bordered">
+          <thead>
+            <tr>
+                <th>Member</th>
+                <th>Expired Certifications</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="m in Members" @click="handleRowClick(m)">
+                <td>{{ m.memberID }}</td>
+                <td>{{ m.certID }}</td>
+            </tr>
   </tbody>
-
   </table>
+  </div>
 
   </main>
 
