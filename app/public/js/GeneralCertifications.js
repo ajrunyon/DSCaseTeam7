@@ -25,7 +25,7 @@ handleSubmit(event) {
   })
   .then( response => response.json() )
 
-.then( json => { waitingApp.Certifications = json})
+.then( json => { generalcertificationsapp.Certifications.push(json[0])})
 
 //.catch( err => {
   //console.error('WORK GENCERT ERROR:');
