@@ -35,7 +35,9 @@ handleSubmit(event) {
 handleReset() {
   this.recordCertificationsByMember = {
     certID: '',
-    memberID: ''
+    memberID: '',
+    datecertified:'',
+    expirationDate:'',
   }
     },
     handleDelete(cid) {

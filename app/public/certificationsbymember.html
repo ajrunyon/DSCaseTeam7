@@ -83,6 +83,8 @@
       <tr>
           <th>Certification ID</th>
           <th>Member ID</th>
+          <th>Date Certified</th>
+          <th>Experation Date</th>
       </tr>
   </thead>
 <!--turn tom's table code into table code for certifications
@@ -91,6 +93,8 @@
     <tr v-for="c in CertificationsByMember">
         <td>{{ c.certID }}</td>
         <td>{{ c.memberID }}</td>
+        <td>{{ c.datecertified }}</td>
+        <td>{{ c.expirationDate }}</td>
         <td>
              <form>
 <input type='button' value='Delete' @click='handleDelete(c.certID)'></input>
@@ -110,6 +114,18 @@
               <label for="inputLastName" class="col-sm-2 col-form-label">Agency</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputCertMemberID" placeholder="Member ID" v-model="recordCertificationsByMember.memberID">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputdatecertified" class="col-sm-2 col-form-label">Date Certified</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputDateCert" placeholder="Date Certified" v-model="recordCertificationsByMember.datecertified">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="inputexpdate" class="col-sm-2 col-form-label">Date Certified</label>
+              <div class="col-sm-10">
+                <input type="date" class="form-control" id="inputExpDate" placeholder="Expiration Date" v-model="recordCertificationsByMember.expirationDate">
               </div>
             </div>
             <div class="form-group row">

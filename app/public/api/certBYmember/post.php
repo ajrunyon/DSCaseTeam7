@@ -7,14 +7,16 @@ $db = DbConnection::getConnection();
 // Step 1: Get a database connection from our help
 $stmt = $db->prepare(
   'INSERT INTO MemberCert
-    (memCert, certID, memberID)
-  Values (?, ?, ?)'
+    (memCert, certID, memberID, datecertified, expirationDate)
+  Values (?, ?, ?, ?, ?)'
 );
 
 $stmt->execute([
   $guid,
   $_POST['certID'],
   $_POST['memberID'],
+  $_POST['datecertified'],
+  $_POST['expirationDate'],
 ]);
 
 // Step 4: Output
