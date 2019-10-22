@@ -3,7 +3,7 @@
 // Step 0: Validation
 use Ramsey\Uuid\Uuid;
 $guid = Uuid::uuid4()->toString();
-
+$db = DbConnection::getConnection();
 // Step 1: Get a database connection from our help
 $stmt = $db->prepare(
   'INSERT INTO Member
