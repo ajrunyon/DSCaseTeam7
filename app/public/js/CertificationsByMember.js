@@ -38,7 +38,26 @@ handleReset() {
     memberID: ''
   }
     },
-
+    handleDelete(cid) {
+          fetch('api/certBYmember/delete.php', {
+            method:'POST',
+            body: JSON.stringify({"certID":cid}),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( function(response) {
+              certificationsbymemberapp.CertificationsByMember = certificationsbymemberapp.CertificationsByMember.filter(
+                function(el) {return el.certID != cid}
+              );
+          })
+        .catch( err => {
+          console.error('WORK GENCERTBYMEMDEL ERROR:');
+          console.error(err);
+        });
+          //this.Certifications.push( this.recordCertifications );
+          this.handleReset();
+    },
 
 //    handleRowClick(certifications) {
 //  generalcertificationsApp.Certifications = certifications;
