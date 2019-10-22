@@ -80,21 +80,28 @@
         <table class="table table-hover table-condensed table-bordered">
           <thead>
             <tr>
-                <th>Member</th>
-                <th>Expired Certifications</th>
+                <th>Member ID</th>
+                <th>Name</th>
+                <th>Station</th>
+                <th>Radio Number</th>
+                <th>Email</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="m in Members" @click="handleRowClick(m)">
+            <tr v-for="m in Members">
                 <td>{{ m.memberID }}</td>
-                <td>{{ m.certID }}</td>
+                <td>{{ m.lastName }}, {{ m.firstName }}</td>
+                <td>{{ m.station }}</td>
+                <td>{{ m.radioNum }}</td>
+                <td>{{ m.email }}</td>
             </tr>
   </tbody>
   </table>
   </div>
 
   </main>
-
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="js/MemberReport.js"></script>
 	</body>
 	<footer>
 	<p> Fire Dept. | Phone: 800-555-1234 | 222 Rasputin Drive, Watkinsville, GA 52003 </p>

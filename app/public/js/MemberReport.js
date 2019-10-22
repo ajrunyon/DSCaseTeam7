@@ -2,13 +2,13 @@ var MemberReportapp = new Vue({
   el: '#MemberReportapp',
   data: {
     Members: []
-  //  recordCertifications: {},
+//    recordCertifications: {},
   },
   methods: {
-    fetchMembers() {
-  fetch('mdummy.php')
+fetchMembers() {
+  fetch('api/memberrecords/index.php')
   .then(response => response.json())
-  .then(json => { generalcertificationsapp.Members = json })
+  .then(json => { MemberReportapp.Members = json })
 },
 //'api/memberrecords/index.php'
 //handleSubmit(event) {
@@ -46,7 +46,7 @@ var MemberReportapp = new Vue({
 //    handleRowClick(certifications) {
 //  generalcertificationsApp.Certifications = certifications;
 //}
-  },
+},
   created() {
 //  this.handleReset();
   this.fetchMembers();
