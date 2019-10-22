@@ -46,17 +46,17 @@ handleReset() {
     station: ''
   }
     },
-    handleDelete(cid) {
-          fetch('api/certificationrecords/delete.php', {
+    handleDelete(mid) {
+          fetch('api/memberrecords/delete.php', {
             method:'POST',
-            body: JSON.stringify({"memberID":cid}),
+            body: JSON.stringify({"memberID":mid}),
             headers: {
               "Content-Type": "application/json; charset=utf-8"
             }
           })
           .then( function(response) {
-              generalcertificationsapp.Certifications = generalcertificationsapp.Certifications.filter(
-                function(el) {return el.memberID != cid}
+              Membersapp.Members = Membersapp.Members.filter(
+                function(el) {return el.memberID != mid}
               );
           })
         .catch( err => {
