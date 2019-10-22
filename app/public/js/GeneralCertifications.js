@@ -23,7 +23,7 @@ handleSubmit(event) {
       "Content-Type": "application/json; charset=utf-8"
     }
   })
-  .then( response => response.json() )
+  .then(response => response.json())
 
 .then( json => { generalcertificationsapp.Certifications.push(json[0])})
 

@@ -1,14 +1,14 @@
 var certificationsbymemberapp = new Vue({
   el: '#certificationsbymemberapp',
   data: {
-    Certifications: [],
-    recordCertifications: {},
+    CertificationsByMember: [],
+    recordCertificationsByMember: {},
   },
   methods: {
     fetchCertifications() {
-  fetch('api/certificationrecords/index.php')
+  fetch('api/certBYmember/index.php')
   .then(response => response.json())
-  .then(json => { generalcertificationsapp.Certifications = json })
+  .then(json => { certificationsbymemberapp.CertificationsByMember = json })
 },
 handleSubmit(event) {
   // fetch(url, {
@@ -16,15 +16,15 @@ handleSubmit(event) {
   //   data: this.recordPatient
   // })
   // .then( ... )
-  fetch('api/certificationrecords/post.php', {
+  fetch('api/certBYmember/post.php', {
     method:'POST',
-    body: JSON.stringify(this.recordCertifications),
+    body: JSON.stringify(this.recordCertificationsByMember),
     headers: {
       "Content-Type": "application/json; charset=utf-8"
     }
   })
   .then( response => response.json() )
-  .then( json => { waitingApp.Certifications = json})
+  .then( json => { certificationsbymemberapp.CertificationsByMember = json})
 //.catch( err => {
   //console.error('WORK GENCERT ERROR:');
   //console.error(err);
@@ -33,11 +33,9 @@ handleSubmit(event) {
   this.handleReset();
 },
 handleReset() {
-  this.recordCertifications = {
+  this.recordCertificationsByMember = {
     certID: '',
-    agency: '',
-    certname: '',
-    expires: ''
+    memberID: ''
   }
     },
 

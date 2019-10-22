@@ -76,7 +76,30 @@
 	<body>
 	<main>
 	<h2>Certifications By Member</h2>
-  <table class="table table-hover table-condensed table-bordered">
+  <div id="certificationsbymemberapp">
+      <table class="table table-hover table-condensed table-bordered">
+  <thead>
+
+      <tr>
+          <th>Certification ID</th>
+          <th>Member ID</th>
+      </tr>
+  </thead>
+<!--turn tom's table code into table code for certifications
+//replace p with c, and Patients with Certifications -->
+  <tbody>
+    <tr v-for="c in CertificationsByMember" @click="handleRowClick(c)">
+        <td>{{ c.certID }}</td>
+        <td>{{ c.memberID }}</td>
+        <td>
+             <form action="/deletecertification.js" >
+<input type='button' value='Delete' @click='deleteRecord(index,c.certID)'></input>
+            </form>
+        </td>
+    </tr>
+          </tbody>
+        </table>
+<!--  <table class="table table-hover table-condensed table-bordered">
 <thead>
   <tr>
       <th>Member</th>
@@ -95,9 +118,10 @@
 
 <form action="/editmember.html" >
              <button type="submit" class="addcertificationbtn">Add Certification for Member</button>
-          </form>
+          </form>-->
 </main>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/CertificationsByMember.js"></script>
  	<hr>
 	</body>
 	<footer>
