@@ -41,8 +41,27 @@ handleReset() {
     certname: '',
     expires: ''
   }
-    },
-
+},
+handleDelete(cid) {
+      fetch('api/certificationrecords/delete.php', {
+        method:'POST',
+        body: JSON.stringify({"certID":cid}),
+        headers: {
+          "Content-Type": "application/json; charset=utf-8"
+        }
+      })
+      .then( function(response) {
+          generalcertificationsapp.Certifications = generalcertificationsapp.Certifications.filter(
+            function(el) {return el.certID != cid}
+          );
+      })
+    .catch( err => {
+      console.error('WORK GENCERTDEL ERROR:');
+      console.error(err);
+    });
+      //this.Certifications.push( this.recordCertifications );
+      this.handleReset();
+},
 
 //    handleRowClick(certifications) {
 //  generalcertificationsApp.Certifications = certifications;

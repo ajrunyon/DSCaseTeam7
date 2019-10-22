@@ -13,7 +13,7 @@ $stmt = $db->prepare(
 
 $stmt->execute([
   $guid,
-  $_POST['memberID'],
+//  $_POST['memberID'],
   $_POST['firstName'],
   $_POST['lastName'],
   $_POST['position'],

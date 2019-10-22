@@ -15,7 +15,7 @@ if (isset($_GET['guid'])) {
   $stmt->execute();
 }
 
-//haven't created $members yet ??
+
 $certifications = $stmt->fetchAll();
 
 //Step 3: Convert to Json

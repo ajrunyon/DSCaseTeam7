@@ -83,7 +83,6 @@
         <div id="generalcertificationsapp">
             <table class="table table-hover table-condensed table-bordered">
         <thead>
-
             <tr>
                 <th>Certification ID</th>
                 <th>Agency</th>
@@ -94,14 +93,14 @@
 <!--turn tom's table code into table code for certifications
 //replace p with c, and Patients with Certifications -->
         <tbody>
-          <tr v-for="c in Certifications" @click="handleRowClick(c)">
+          <tr v-for="c in Certifications">
               <td>{{ c.certID }}</td>
               <td>{{ c.agency }}</td>
               <td>{{ c.certname }}</td>
               <td>{{ c.expires }}</td>
               <td>
-                   <form action="/deletecertification.js" >
-     <input type='button' value='Delete' @click='deleteRecord(index,c.certID)'></input>
+                   <form>
+     <input type='button' value='Delete' @click='handleDelete(c.certID)'></input>
                   </form>
               </td>
           </tr>

@@ -79,6 +79,7 @@
     <p></p>
 
 	<h2> Members </h2>
+<div id="Membersapp">
   <div class="card" style="width: 18rem;">
     <h5 class=card-header></h5>
     <div class="card-body">
@@ -102,8 +103,21 @@
       <th></th>
   </tr>
 </thead>
-
 <tbody>
+  <tr v-for="m in Certifications" @click="handleRowClick(m)">
+      <td>{{ m.memberID }}</td>
+      <td>{{ m.agency }}</td>
+      <td>{{ m.certname }}</td>
+      <td>{{ m.expires }}</td>
+      <td>
+           <form action="/deletecertification.js" >
+<input type='button' value='Delete' @click='deleteRecord(index,c.certID)'></input>
+          </form>
+      </td>
+  </tr>
+</tbody>
+</table>
+<!--<tbody>
   <tr >
       <td >50038</td>
       <td>Kathryn</td>
@@ -207,7 +221,7 @@
 
   </tr>
 
-</tbody>
+</tbody> -->
 
 <!--
 <tfoot>
@@ -217,8 +231,8 @@
   </tr>
 </tfoot>
 -->
-</table>
 </div> </div>
+</div>
 <form action="/editmember.html" >
              <button type="submit" class="addcertificationbtn">Add Member</button>
           </form>
