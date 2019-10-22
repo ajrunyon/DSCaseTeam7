@@ -80,9 +80,6 @@
 
 	<h2> Members </h2>
 <div id="Membersapp">
-  <div class="card" style="width: 18rem;">
-    <h5 class=card-header></h5>
-    <div class="card-body">
   <table class="table table-sm table-hover table-condensed table-bordered">
   <thead>
   <tr>
@@ -91,27 +88,22 @@
       <th>Lastname</th>
       <th>Position</th>
       <th>Email</th>
-      <th>Work Phone</th>
-      <th>Mobile Phone</th>
-      <th>Radio #</th>
+      <th>Radio Number</th>
       <th>Station</th>
-      <th>Is Active?</th>
-      <th>Gender</th>
-      <th>Address</th>
-      <th>Date of Birth</th>
-      <th>Start Date</th>
-      <th></th>
   </tr>
 </thead>
 <tbody>
-  <tr v-for="m in Certifications" @click="handleRowClick(m)">
+  <tr v-for="m in Members">
       <td>{{ m.memberID }}</td>
-      <td>{{ m.agency }}</td>
-      <td>{{ m.certname }}</td>
-      <td>{{ m.expires }}</td>
+      <td>{{ m.firstName }}</td>
+      <td>{{ m.lastName }}</td>
+      <td>{{ m.position }}</td>
+      <td>{{ m.email }}</td>
+      <td>{{ m.radioNum }}</td>
+      <td>{{ m.station }}</td>
       <td>
-           <form action="/deletecertification.js" >
-<input type='button' value='Delete' @click='deleteRecord(index,c.certID)'></input>
+           <form>
+<input type='button' value='Delete' @click='handleDelete(m.memberID)'></input>
           </form>
       </td>
   </tr>
@@ -231,11 +223,61 @@
   </tr>
 </tfoot>
 -->
-</div> </div>
+
+<form @submit.prevent="handleSubmit">
+
+  <div class="form-group row">
+    <label for="inputFirstName" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputFirstName" placeholder="First Name" v-model="recordMembers.firstName">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputlastName" class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputlastName" placeholder="Last Name" v-model="recordMembers.lastName">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputposition" class="col-sm-2 col-form-label">Position</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputposition" placeholder="Position" v-model="recordMembers.position">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputemail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputemail" placeholder="example@email.com" v-model="recordMembers.email">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputradionum" class="col-sm-2 col-form-label">Radio Number</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputradionum" placeholder="Radio Number" v-model="recordMembers.radioNum">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="inputstation" class="col-sm-2 col-form-label">Station</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputstation" placeholder="Position" v-model="recordMembers.station">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary">Add New Member</button>
+    </div>
+  </div>
+</form>
 </div>
-<form action="/editmember.html" >
-             <button type="submit" class="addcertificationbtn">Add Member</button>
-          </form>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/Members.js"></script>
 </main>
 	</body>
 	<footer>

@@ -5,8 +5,8 @@ var Membersapp = new Vue({
     recordMembers: {},
   },
   methods: {
-    fetchMembers() {
-  fetch('api/certificationrecords/index.php')
+fetchMembers() {
+  fetch('api/memberrecords/')
   .then(response => response.json())
   .then(json => { Membersapp.Members = json })
 },
@@ -16,7 +16,7 @@ handleSubmit(event) {
   //   data: this.recordPatient
   // })
   // .then( ... )
-  fetch('api/certificationrecords/post.php', {
+  fetch('api/memberrecords/post.php', {
     method:'POST',
     body: JSON.stringify(this.recordMembers),
     headers: {
@@ -36,12 +36,36 @@ handleSubmit(event) {
 handleReset() {
   this.recordMembers = {
     memberID: '',
-    agency: '',
-    certname: '',
-    expires: ''
+    firstName: '',
+    lastName: '',
+    position: '',
+    email: '',
+    workphone: '',
+    mobilephone: '',
+    radioNum: '',
+    station: ''
   }
     },
-
+    handleDelete(cid) {
+          fetch('api/certificationrecords/delete.php', {
+            method:'POST',
+            body: JSON.stringify({"memberID":cid}),
+            headers: {
+              "Content-Type": "application/json; charset=utf-8"
+            }
+          })
+          .then( function(response) {
+              generalcertificationsapp.Certifications = generalcertificationsapp.Certifications.filter(
+                function(el) {return el.memberID != cid}
+              );
+          })
+        .catch( err => {
+          console.error('WORK GENCERTDEL ERROR:');
+          console.error(err);
+        });
+          //this.Certifications.push( this.recordCertifications );
+          this.handleReset();
+    },
 
 //    handleRowClick(certifications) {
 //  generalcertificationsApp.Certifications = certifications;
