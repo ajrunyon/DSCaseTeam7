@@ -6,9 +6,9 @@ $db = DbConnection::getConnection();
 //Step 2: Create & Run the Query
 $stmt = $db->prepare(
     'DELETE FROM MemberCert
-    WHERE certID = ?'
+    WHERE memCert = ?'
 );
-$stmt->execute([$_POST['certID']]);
+$stmt->execute([$_POST['memCert']]);
 
 
 

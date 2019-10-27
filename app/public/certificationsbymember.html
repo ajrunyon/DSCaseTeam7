@@ -76,11 +76,12 @@
 	<body>
 	<main>
 	<h2>Certifications By Member</h2>
-      <div id = "memcertapp">
+  <div id = "memcertapp">
       <table class="table table-hover table-condensed table-bordered">
   <thead>
 
       <tr>
+          <th>memberID</th>
           <th>Certification ID</th>
           <th>Member ID</th>
           <th>Date Certified</th>
@@ -91,13 +92,14 @@
 //replace p with c, and Patients with Certifications -->
   <tbody>
     <tr v-for="c in CertificationsByMember">
+        <td>{{ c.memCert }}</td>
         <td>{{ c.certID }}</td>
         <td>{{ c.memberID }}</td>
         <td>{{ c.datecertified }}</td>
         <td>{{ c.expirationDate }}</td>
         <td>
              <form>
-<input type='button' value='Delete' @click='handleDelete(c.certID)'></input>
+<input type='button' value='Delete' @click='handleDelete(c.memCert)'></input>
             </form>
         </td>
     </tr>
@@ -115,8 +117,8 @@
                 <select v-model="recordCertificationsByMember.memberID">
                   <option v-for="m in Members">{{ m.memberID }}</option>
                 </select>
-            </div>
-<!--             <div class="form-group row">
+           </div>
+          <!--     <div class="form-group row">
                <label for="inputFirstName" class="col-sm-2 col-form-label">Certification ID</label>
                 <div class="col-sm-10">
                   <input type="text" class="form-control" id="inputMemberCertID" placeholder="Certification ID" v-model="recordCertificationsByMember.certID">
@@ -127,13 +129,18 @@
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputCertMemberID" placeholder="Member ID" v-model="recordCertificationsByMember.memberID">
               </div>
-            </div> -->
+            </div>-->
             <div class="form-group row">
               <label for="inputdatecertified" class="col-sm-2 col-form-label">Date Certified</label>
               <div class="col-sm-10">
                 <input type="date" class="form-control" id="inputDateCert" placeholder="Date Certified" v-model="recordCertificationsByMember.datecertified">
               </div>
             </div>
+              <p>Be sure to check standard expiry time for certifications before entering experation date!</p>
+              <a href="generalcertifications.html"> See Certification Details</a>
+            <br>
+            <br>
+            <br>
             <div class="form-group row">
               <label for="inputexpdate" class="col-sm-2 col-form-label">Expirations Date</label>
               <div class="col-sm-10">

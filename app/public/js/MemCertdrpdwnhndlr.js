@@ -7,7 +7,7 @@ var memcertapp = new Vue({
     recordCertificationsByMember: {},
   },
   methods: {
-    fetchCertifications() {
+  fetchCertifications() {
   fetch('api/certificationrecords/index.php')
   .then(response => response.json())
   .then(json => { memcertapp.Certifications = json })
@@ -55,14 +55,14 @@ handleReset() {
     handleDelete(cid) {
           fetch('api/certBYmember/delete.php', {
             method:'POST',
-            body: JSON.stringify({"certID":cid}),
+            body: JSON.stringify({"memCert":cid}),
             headers: {
               "Content-Type": "application/json; charset=utf-8"
             }
           })
           .then( function(response) {
               memcertapp.CertificationsByMember = memcertapp.CertificationsByMember.filter(
-                function(el) {return el.certID != cid}
+                function(el) {return el.memCert != cid}
               );
           })
         .catch( err => {
@@ -80,7 +80,7 @@ handleReset() {
   created() {
   this.handleReset();
   this.fetchCertifications();
-  this.fetchCertificationsByMember();
   this.fetchMembers();
+  this.fetchCertificationsByMember();
 }
 });
