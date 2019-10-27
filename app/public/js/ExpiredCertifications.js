@@ -2,13 +2,18 @@ var expiredcertificationsapp = new Vue({
   el: '#expiredcertificationsapp',
   data: {
     expiredCertifications: [],
+    filter:{
+      expcertName:''
+  }
   },
-  methods: {
-    fetchCertifications() {
-  fetch('api/certBYmember/index.php')
-  .then(response => response.json())
-  .then(json => { generalcertificationsapp.expiredCertifications = json })
+methods: {
+  fetchCertifications() {
+    fetch('api/expiredcertbymember/index.php')
+      .then(response => response.json())
+      .then(json => { expiredcertificationsapp.expiredCertifications = json })
 },
+
+  },
 //handleSubmit(event) {
   // fetch(url, {
   //   method: 'post',
@@ -44,7 +49,6 @@ var expiredcertificationsapp = new Vue({
 //    handleRowClick(certifications) {
 //  generalcertificationsApp.Certifications = certifications;
 //}
-  },
   created() {
 //  this.handleReset();
   this.fetchCertifications();

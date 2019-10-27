@@ -82,21 +82,21 @@
           <thead>
             <tr>
                 <th>Member ID</th>
-                <th>Member Name</th>
-                <th>Expired Certifications; Experation Date</th>
-                <th>Date</th>
+                <th>Expired Certification ID</th>
+                <th>Date Expired</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="e in expired" @click="handleRowClick(m)">
+            <tr v-for="e in expiredCertifications" @click="handleRowClick(e)">
                 <td>{{ e.memberID }}</td>
-                <td>{{ e.certID }}; {{ e.expirationDate }}</td>
+                <td>{{ e.certID }}</td>
                 <td>{{ e.expirationDate }}</td>
             </tr>
     </tbody>
     </table>
     </div>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/ExpiredCertifications.js"></script>
 </main>
  	<hr>
 	</body>
